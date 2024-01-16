@@ -20,7 +20,7 @@ namespace MyWinFormsApp
 
         private void InitializeComponent()
         {
-            // PostListForm tasarım kodu burada yer alır
+           
 
             this.flowLayoutPanel = new FlowLayoutPanel();
             this.flowLayoutPanel.FlowDirection = FlowDirection.TopDown;
@@ -35,7 +35,7 @@ namespace MyWinFormsApp
             this.btnRefresh.Click += new EventHandler(this.btnRefresh_Click);
             this.Controls.Add(this.btnRefresh);
 
-            // LoadPosts metodunu form yüklendiğinde çağır
+         
             this.Load += new EventHandler(this.PostListForm_Load);
         }
 
@@ -51,25 +51,25 @@ namespace MyWinFormsApp
 
         private void LoadPosts()
         {
-            // Tüm postları getir ve panel içine yükle
+            
             flowLayoutPanel.Controls.Clear();
 
             var posts = dbContext.Posts.ToList();
             foreach (var post in posts)
             {
-                // Kullanıcı adını bul
+                
                 var user = dbContext.Users.FirstOrDefault(u => u.Id == post.UserId);
 
                 string postInfo = $"{post.Title} - {post.Content} by {user?.Username}";
 
-                // Eğer postta bir fotoğraf varsa, PictureBox kontrolünü panel içine göster
+               
                 if (!string.IsNullOrEmpty(post.PhotoPath))
                 {
                     postInfo += $" - Photo: {post.PhotoPath}";
 
                     PictureBox pictureBox = new PictureBox();
-                    pictureBox.ImageLocation = post.PhotoPath;
-                    pictureBox.SizeMode = PictureBoxSizeMode.Zoom; // Resmi PictureBox boyutuna sığdır
+                    pictureBox.ImageLocation = Path.Combine("wwwroot", post.PhotoPath);
+                    pictureBox.SizeMode = PictureBoxSizeMode.Zoom; 
 
                     Label label = new Label();
                     label.Text = postInfo;

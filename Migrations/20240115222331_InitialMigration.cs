@@ -4,10 +4,10 @@
 
 namespace MyWinFormsApp.Migrations
 {
-    /// <inheritdoc />
+    
     public partial class InitialMigration : Migration
     {
-        /// <inheritdoc />
+       
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -50,7 +50,7 @@ namespace MyWinFormsApp.Migrations
                 column: "UserId");
         }
 
-        /// <inheritdoc />
+        
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(

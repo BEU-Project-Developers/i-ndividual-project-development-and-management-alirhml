@@ -96,7 +96,7 @@ namespace MyWinFormsApp
                 MessageBox.Show($"Welcome, {user.Username}!");
                 loggedInUserId = user.Id;
 
-               
+
             }
             else
             {
@@ -125,8 +125,12 @@ namespace MyWinFormsApp
             CenterToScreen();
         }
 
-        // Placeholder text için gerekli Windows API fonksiyonu
+       
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         private static extern int SendMessage(IntPtr hWnd, int msg, int wParam, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPWStr)] string lParam);
     }
 }
+
+
+
+

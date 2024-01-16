@@ -9,7 +9,7 @@ namespace MyWinFormsApp.data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=127.0.0.1,1433;Database= Sosialv2App; User Id=sa; Password=Password@12345;TrustServerCertificate=True;");
+            optionsBuilder.UseSqlServer("Data Source=SQL8006.site4now.net;Initial Catalog=db_aa41a1_alirahimli;User Id=db_aa41a1_alirahimli_admin;Password=Ali123@Ali");
         }
     }
 }

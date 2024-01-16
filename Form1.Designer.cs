@@ -26,7 +26,10 @@ partial class Form1
     ///  Required method for Designer support - do not modify
     ///  the contents of this method with the code editor.
     /// </summary>
- 
+
 
     #endregion
+
+    private PictureBox pictureBox1;
+    private TextBox textBox1;
 }
